@@ -36,7 +36,7 @@ texts = text_laundry.head_foot(file_path).remove()
  
 * **lower case** [bool] : toggle between bool values for lower or upper casing. 
 
-* `substringswhichareattachedwillbeseparated` will be separated to ``substrings which are attached will be separated`` based on the fequency of the constituent words in the document. 
+* `s u b s t r i n g s w h i c h a r e a t t a c h e d w i l l b e s e p a r a t e d` will be separated to ``substrings which are attached will be separated`` based on the fequency of the constituent words in the document. 
 
 ```
 text_object = text_laundry.load_text([input str], remove_serial, sents_or_word_breaks, lower)
