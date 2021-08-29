@@ -1,5 +1,7 @@
 # doc_intel
 
+`pip install doc-intel`
+
 
 ###### This package is subject to several potential fixes and until then any benefits derived by using this is very much intended. 
 
