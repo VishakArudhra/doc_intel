@@ -44,5 +44,5 @@ texts = text_laundry.head_foot(file_path).remove()
 text_object = text_laundry.load_text([input str], remove_serial, sents_or_word_breaks, lower)
 cleaned_text = text_object.launder()
 ```
-
+###### **Authored and Maintained By** : Vishak Arudhra
 
