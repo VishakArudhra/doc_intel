@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="doc_intel",
-    version="0.0.6",
+    version="0.0.10",
     description="Your solution to cleansing PDF documents for preprocessing for NLP",
     long_description=README,
     long_description_content_type="text/markdown",

@@ -123,7 +123,7 @@ class load_text:
             if (words[idx].find('-') > 0):
         #         print(word.split('-'))
                 dic_bool = sum([(piece.lstrip().rstrip().lower() in dictionary) for piece in word.split('-')])
-                num_bool = all([piece.lstrip().rstrip().isdigit() for piece in word.split('-')])
+                num_bool = any([piece.lstrip().rstrip().isdigit() for piece in word.split('-')])
                 
                 if dic_bool > 1:
                     words[idx] = words[idx].replace('-',' ')
@@ -172,7 +172,9 @@ class load_text:
             except ZeroDivisionError:
                 pass
             
-        return ' '.join(text_split).replace('|','').replace("\'","")
+        texts = repr(' '.join(text_split))
+            
+        return texts.replace('|','').replace('\'','').replace('\\','"').replace('"',"'")
     
     def launder(self):
         
@@ -184,7 +186,7 @@ class load_text:
             for ind, sym in enumerate('* .'.split()):
 
                 if(sym=='.'):       
-                    self.texts = sym.join([piece.rstrip().lstrip() for piece in self.texts.split(sym) if len(piece.split()) > 1])
+                    self.texts = '. '.join([piece.rstrip().lstrip() for piece in self.texts.split(sym) if len(piece.split()) > 1])
                 else:
                     self.texts = ' '.join([piece.rstrip().lstrip() for piece in self.texts.split(sym) if len(piece.split()) > 1])
         if self.remov_serial:

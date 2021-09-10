@@ -14,6 +14,8 @@
 ###### change 0.0.2 (8 / 28 / 2021) :                         
    * Updated dictionary, maybe inverse document frequency will later be used instead to fix the line breaks. 
    * Inverse document frequency has been used to precisely split and reconstruct stitched or meaninglessly spaced words. 
+###### change 0.0.2 (9 / 10 / 2021) :
+   * added and removed words in word.txt, fixed dot spacing and conserved number word detachment post processing" 
 
 
 ## Feature instruction:
