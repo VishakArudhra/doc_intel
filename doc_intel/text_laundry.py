@@ -198,7 +198,17 @@ class load_text:
         
         return ' '.join(self.texts.split())
 
-        
+if __name__ == '__main__':
     
+    file_path =  r"D:\d_intel_hot_fix\input_pdfs\ZF_NHB_2020_FINAL (1).pdf"
+    texts = head_foot(file_path).find_head_foot().remove()
+    trues = [True]*3
+    texts = load_text(texts, *trues).launder()
+    saved_txt = open('zf_nb_2020.txt','r')
+    saved_txt.write(texts)
+    saved_txt.close()
+
+
+
     
     
