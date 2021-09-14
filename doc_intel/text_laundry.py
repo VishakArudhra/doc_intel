@@ -4,7 +4,7 @@ import re
 import Levenshtein 
 import math
 import pandas as pd
-from despace import deSpace
+from .despace import deSpace
 import os
 
 '''<-----------------------------------------  Header and Footer Removal Module  ------------------------------------------------------->'''
@@ -204,7 +204,7 @@ if __name__ == '__main__':
     texts = head_foot(file_path).remove()
     trues = [True]*3
     texts = load_text(texts, *trues).launder()
-    saved_txt = open('zf_nb_2019.txt','w')
+    saved_txt = open('text_extract.txt','w')
     saved_txt.write(texts)
     saved_txt.close()
 
