@@ -18,12 +18,16 @@
    * added and removed words in word.txt, fixed dot spacing and conserved number word detachment post processing" 
 
 ###### change 0.0.4 (9 / 14 / 2021) :
-   * added and removed words in word.txt, maintained the positions of apostrophes. 
+   * added and removed words in word.txt, maintained the positions of apostrophes.
+ 
+### Major Version Update 1.0.0 (19 / 10 / 2021) :
+   * A new module has been added for to serve requirements of deletion and addition of words in the word text file. 
+   * Usage demonstration can be found under the feature instruction section. 
 
 
 ## Feature instruction:
 
-* remove header and footer terms in your document : 
+#### REMOVE THE HEADER AND FOOTER TERMS FORM YOUR DOCUMENT: 
 
 ```
 from doc_intel import text_laundry
@@ -33,9 +37,9 @@ file_path = / your_path/ your_file.pdf
 texts = text_laundry.head_foot(file_path).remove()
 ```
 
-* scrub off textual noise from your texts:
+#### SCRUB OFF TEXTUAL NOISE FROM YOUR TEXTS:
 
-###### Arguements : 
+###### Arguments : 
 
 * **serial numerical noise** [bool]: noise like `some textual piece but then 101 234 384 927 so all these numbers will be removed if needed` will be removed. 
 
@@ -49,4 +53,19 @@ texts = text_laundry.head_foot(file_path).remove()
 text_object = text_laundry.load_text([input str], remove_serial, sents_or_word_breaks, lower)
 cleaned_text = text_object.launder()
 ```
+
+#### **ADD** AND **DELETE** WORDS FROM IN-BUILT DICTIONARY:
+
+* PDF documents are not purposely written to suite document extraction and therefore, a lot of discontinued words in the documents end up broken with ordinary text extraction. 
+* doc-intel's in-built dicttionary support identification of many 1000s of words which is now **editable**. Add and remove words as you require for your smooth text extraction. 
+
+```
+from doc_intel import manage_diction
+
+word_list = " your list of words to either add or delete "
+manage_diction.register_words(word_list).Add()  #or
+manage_diction.register_words(word_list).Delete()
+```
+
+
 ###### **Authored & Maintained By** : Vishak Arudhra
