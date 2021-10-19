@@ -41,13 +41,13 @@ texts = text_laundry.head_foot(file_path).remove()
 
 ###### Arguments : 
 
-* **serial numerical noise** [bool]: noise like `some textual piece but then 101 234 384 927 so all these numbers will be removed if needed` will be removed. 
+* **serial numerical noise** [bool]: noise like `(text) + (random numbers, spaced or continous)` will be removed. 
 
 * **sentences or words interrupted with special characters** [bool] : All cohesive words and sentences interruptions like  `co -hesive` or `sol **utions` should be removed.
  
 * **lower case** [bool] : toggle between bool values for lower or upper casing. 
 
-* `s u b s t r i n g s w h i c h a r e a t t a c h e d w i l l b e s e p a r a t e d` will be separated to ``substrings which are attached will be separated`` based on the fequency of the constituent words in the document. 
+* `s u b s t r i n g s w h i c h a r e a t t a c h e d w i l l b e s e p a r a t e d` --> ``substrings which are attached will be separated`` (based on the fequency of the constituent words in the document). 
 
 ```
 text_object = text_laundry.load_text([input str], remove_serial, sents_or_word_breaks, lower)
