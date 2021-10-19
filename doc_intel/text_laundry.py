@@ -4,7 +4,7 @@ import re
 import Levenshtein 
 import math
 import pandas as pd
-from .despace import deSpace
+from despace import deSpace
 import os
 
 '''<-----------------------------------------  Header and Footer Removal Module  ------------------------------------------------------->'''
@@ -78,8 +78,10 @@ class head_foot:
 class load_text:
     
     def __init__(self, texts:str, remove_serial: bool, sents_or_word_breaks:bool, lower: bool):
-        
-        eng_dic = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'words.txt'), 'rt').read()
+        try:
+            eng_dic = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'words.txt'), 'rt').read()
+        finally:
+            eng_dic.close()
         
         dictionary = set(eng_dic.lower().split())
         
@@ -207,6 +209,20 @@ if __name__ == '__main__':
     saved_txt = open('text_extract.txt','w')
     saved_txt.write(texts)
     saved_txt.close()
+
+
+
+
+    
+          
+
+                
+            
+
+
+        
+        
+
 
 
 
