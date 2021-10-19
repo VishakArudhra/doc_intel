@@ -57,7 +57,8 @@ cleaned_text = text_object.launder()
 #### **ADD** AND **DELETE** WORDS FROM IN-BUILT DICTIONARY:
 
 * PDF documents are not purposely written to suite document extraction and therefore, a lot of discontinued words in the documents end up broken with ordinary text extraction. 
-* doc-intel's in-built dicttionary support identification of many 1000s of words which is now **editable**. Add and remove words as you require for your smooth text extraction. 
+* doc-intel's in-built dictionary support identification of many 1000s of words which is now **editable**. Add and remove words as you require for your smooth text extraction. 
+* `do-cument` --> `document`
 
 ```
 from doc_intel import manage_diction
