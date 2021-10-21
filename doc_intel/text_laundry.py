@@ -4,7 +4,7 @@ import re
 import Levenshtein 
 import math
 import pandas as pd
-from .despace import deSpace
+from despace import deSpace
 import os
 
 '''<-----------------------------------------  Header and Footer Removal Module  ------------------------------------------------------->'''
@@ -79,9 +79,11 @@ class load_text:
     
     def __init__(self, texts:str, remove_serial: bool, sents_or_word_breaks:bool, lower: bool):
         try:
-            eng_dic = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'words.txt'), 'rt').read()
+            dict_file = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'words.txt'), 'rt')
+            eng_dic = dict_file.read()
+            
         finally:
-            eng_dic.close()
+            dict_file.close()
         
         dictionary = set(eng_dic.lower().split())
         
@@ -142,6 +144,23 @@ class load_text:
             return True
         except ValueError:
             return False 
+
+    def num_dot_correct(self, document):
+
+        dot_split = document.split('.')
+
+        for idx, line in enumerate(dot_split):
+            if idx == (len(dot_split) - 1):
+                print('(dot digit) - last line reached!')
+                break
+            else:
+                cond_1 = line[-1].isdigit()
+                cond_2 = dot_split[idx + 1][1].isdigit()
+
+                if ((cond_1)&(cond_2)):
+                    dot_split[idx + 1] = dot_split[idx + 1].replace(' ','',1)
+
+        return '.'.join(dot_split)
         
     def remove_serial(self, texts): # to remove a series of numbers separated by spaces
         
@@ -196,19 +215,22 @@ class load_text:
             self.texts = self.remove_serial(self.texts)
             
         interext = deSpace(self.texts).space_in()
-        self.texts = deSpace(interext).space_in()
-        
-        return ' '.join(self.texts.split())
+        self.texts = deSpace(interext).space_in()        
+        self.texts = ' '.join(self.texts.split())
+
+        return self.num_dot_correct(self.texts)
 
 if __name__ == '__main__':
     
-    file_path =  r"file_path goes here"
+    file_path =  r"C:\Users\Vishak\Downloads\deeplearningbook.pdf"
     texts = head_foot(file_path).remove()
     trues = [True]*3
     texts = load_text(texts, *trues).launder()
     saved_txt = open('text_extract.txt','w')
     saved_txt.write(texts)
     saved_txt.close()
+
+    
 
 
 
