@@ -151,7 +151,7 @@ class load_text:
 
         for idx, line in enumerate(dot_split):
             if idx == (len(dot_split) - 1):
-                print('(dot digit) - last line reached!')
+                print('(dot digit) - last line reached!\ncleansing done. ')
                 break
             else:
                 cond_1 = line[-1].isdigit()
@@ -200,7 +200,7 @@ class load_text:
     def launder(self):
         
         if self.sents_or_word_breaks == None:
-            self.sents_or_word_breaks = False
+            self.sents_or_word_breaks = False 
 
         if self.sents_or_word_breaks:
 
