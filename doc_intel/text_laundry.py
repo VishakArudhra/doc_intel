@@ -4,7 +4,7 @@ import re
 import Levenshtein 
 import math
 import pandas as pd
-from despace import deSpace
+from .despace import deSpace
 import os
 
 '''<-----------------------------------------  Header and Footer Removal Module  ------------------------------------------------------->'''
