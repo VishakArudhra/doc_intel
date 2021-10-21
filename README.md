@@ -20,9 +20,13 @@
 ###### change 0.0.4 (9 / 14 / 2021) :
    * added and removed words in word.txt, maintained the positions of apostrophes.
  
-### Major Version Update 1.0.0 (19 / 10 / 2021) :
-   * A new module has been added for to serve requirements of deletion and addition of words in the word text file. 
+### Major Version Update 1.0.0 (10 / 19 / 2021) :
+   * A new module has been added to serve requirements of deletion and addition of words in the words text file. 
    * Usage demonstration can be found under the feature instruction section. 
+
+###### change 1.0.1 (10 / 21 / 2021) :
+   * fixed issue by which decimal numbers were spaced from the decimal point.
+   * closed the words text file in the main code block to prevent unclosed file issues. 
 
 
 ## Feature instruction:
